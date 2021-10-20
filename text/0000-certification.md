@@ -17,7 +17,7 @@
 [summary]: #summary
 
 
-This RFC intends to introduce certification workflows at a supplier level.
+This RFC introduces certification workflows at a supplier level.
 It will primarily consist of translating the Sawtooth transactions defined in 
 https://github.com/target/consensource-processor into a Grid smart contract.
 
@@ -96,11 +96,11 @@ A certification is a business transaction that specifies the details of a
 supplier’s capabilities. The certification transaction contains information such as issuance date, purpose, and expiration.
 
 A simplified certification sequence is as follows:
-Standards body creates standard `Foobar`
-Standards body accredits a certifying body to the `Foobar` standard
-Factory requests a `Foobar` certification
-The certifying body receives the request and performs an audit
-Certifying body grants the `Foobar` certification to the factory
+  - Standards body creates standard `Foobar`
+  - Standards body accredits a certifying body to the `Foobar` standard
+  - Factory requests a `Foobar` certification
+  - The certifying body receives the request and performs an audit
+  - Certifying body grants the `Foobar` certification to the factory
 
 ## Entities
 
