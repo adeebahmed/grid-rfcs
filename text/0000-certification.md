@@ -17,7 +17,7 @@
 [summary]: #summary
 
 
-This RFC intends to introduce certification workflows at a supplier level.
+This RFC introduces certification workflows at a supplier level.
 It will primarily consist of translating the Sawtooth transactions defined in 
 https://github.com/target/consensource-processor into a Grid smart contract.
 
@@ -149,7 +149,6 @@ This design introduces six smart contract actions.
 ## Transactions
 
 ## Permissions
-
 
 # Reference-level explanation
 [reference-level-explanation]: #reference-level-explanation
