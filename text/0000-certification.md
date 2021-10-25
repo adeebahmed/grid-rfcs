@@ -1,4 +1,4 @@
-- Feature Name: Grid Certification
+- Feature Name: Grid Supplier Certification
 - Start Date: 10/12/21
 - RFC PR: https://github.com/hyperledger/grid-rfcs/pull/29
 
@@ -46,15 +46,19 @@ Communicating certification details via email, web portals, or traditional
 methods create uncertainty for sourcing teams across the industry because 
 they lack a shared view of the validity of a certificate. 
 
-Siloed views of certificate data make it difficult to source and validate the certifications of a supplier. Grid Certification aims to address this challenge by providing a 
-mechanism for trade partners to collaborate on the creation and modification of 
-a purchase order with a shared view into the state of the order.
+Siloed views of certificate data make it difficult to source and validate 
+the certifications of a supplier. Grid Supplier Certification aims to 
+address this challenge by providing a  mechanism for trade partners 
+to collaborate on the creation and modification of a purchase order 
+with a shared view into the state of the order.
 
 
 # Motivation
 [motivation]: #motivation
 
-Grid Certification is designed for sharing factory certification data between industry participants. The discovery and validation of factory-level certifications is a pain point that retailers share across the industries. 
+Grid Supplier Certification is designed for sharing factory certification 
+data between industry participants. The discovery and validation of 
+factory-level certifications is a pain point that retailers share across the industries. 
 
 The communication of certificate information occurs in various ways today: 
   - Phone
@@ -67,39 +71,53 @@ certifying body that performed the original audit. This process is
 time-consuming, expensive, and error-prone. Discrepancies between systems 
 result in costs related to administrative time, product recalls, and more.
 
-Grid Certification aims to address these pain points by
+Grid Supplier Certification aims to address these pain points by
 offering a common industry solution for sharing factory certification 
 information between participants on Grid. Trade partners have the option to 
 integrate this Grid component with existing systems of record.
 
 Expected outcomes include: 
 
-- **Greater data accuracy:** Reduce manual data entry errors
+- Improved cost efficiency. An organization’s financial results can benefit 
+  from a reduction in administrative time spent manually validating factories 
+  certifications authenticity.
 
-- **Improved productivity:** Less time spent verifying certificate authenticity
+- Improved transaction accuracy. Automated sharing of factory certification 
+  data can reduce errors that stem from manual data entry.
 
-- **Increased speed:** Receive certification status updates in seconds, not days
+- Increased speed. Changes in a factories certification status can be quickly 
+  communicated between organizations, leading to faster response times, improved 
+  sourcing decisions and production planning, greater customer satisfaction, 
+  and visibility into factory information.
+
+- Improved productivity. Less time spent comparing documents and resolving 
+  discrepancies means team members can focus on move value-add business opportunities.
 
 
 The design will address the following use cases:
 
 - Sharing of supplier, certification, and standards data on Grid
-- Modelling of real-world certification issuance workflows
+- Modeling of real-world certification issuance workflows
 
-Certification information can also be useful in many other Grid solutions, such as extending location information in a Track and Trace contract with certificate information. This workflow introduces a certificate data model that could be extended to include product-level certifications. 
+It is also useful to use certification data as auxiliary data in other supply chain solutions. 
+For example, in track and trace smart contract, the location of a particular factory in a 
+supply chain can be extended to include the certificates the factory holds. When presenting 
+this information later to a sourcing specialist, it makes its easier for them to vet potential 
+factories. This workflow will introduce a certificate data model that could also be extended 
+to include product level certifications.
 
 
 # Guide-Level Explanation
 [guide-level-explanation]: #guide-level-explanation
 
 A certification is a business transaction that specifies the details of a 
-supplier’s capabilities. The certification transaction contains information such as issuance date, purpose, and expiration.
+supplier’s capabilities. The certification transaction contains information 
+such as issuance date, purpose, and expiration.
 
 A simplified certification sequence is as follows:
   - Standards body creates standard `Foobar`
   - Standards body accredits a certifying body to the `Foobar` standard
-  - Factory requests a `Foobar` certification
-  - The certifying body receives the request and performs an audit
+  - The certifying body performs an audit
   - Certifying body grants the `Foobar` certification to the factory
 
 ## Entities
