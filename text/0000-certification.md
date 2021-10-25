@@ -168,7 +168,6 @@ This design introduces six smart contract actions.
 
 ## Permissions
 
-
 # Reference-level explanation
 [reference-level-explanation]: #reference-level-explanation
 
