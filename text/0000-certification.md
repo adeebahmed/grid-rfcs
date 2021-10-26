@@ -7,7 +7,8 @@
 - [Summary](0000-certification.md#summary)
 - [Motivation](0000-certification.md#motivation)
 - [Guide-level Explanation](0000-certification.md#guide-level-explanation)
-- [Reference-level Explanation](0000-certification.md#reference-level-explanation)
+- [Reference-level 
+Explanation](0000-certification.md#reference-level-explanation)
 - [Drawbacks](0000-certification.md#drawbacks)
 - [Rationale and Alternatives](0000-certification.md#rationale-and-alternatives)
 - [Prior Art](0000-certification.md#prior-art)
@@ -26,7 +27,8 @@ for verifying certified suppliers. It serves as a
 transparent platform for displaying certifications and audit data 
 between parties such as standards bodies, certifying bodies, and suppliers.
 
-In order to utilize Grid workflows, a set of `PermissionAlias` objects needs to be
+In order to utilize Grid workflows, a set of `PermissionAlias` objects needs to 
+be
 created to support the following persona-specific actions:
 - `Certification bodies`
     - Issue certificates
@@ -58,7 +60,8 @@ with a shared view into the state of the order.
 
 Grid Supplier Certification is designed for sharing factory certification 
 data between industry participants. The discovery and validation of 
-factory-level certifications is a pain point that retailers share across the industries. 
+factory-level certifications is a pain point that retailers share across the 
+industries. 
 
 The communication of certificate information occurs in various ways today: 
   - Phone
@@ -86,12 +89,14 @@ Expected outcomes include:
   data can reduce errors that stem from manual data entry.
 
 - Increased speed. Changes in a factories certification status can be quickly 
-  communicated between organizations, leading to faster response times, improved 
+  communicated between organizations, leading to faster response times, 
+improved 
   sourcing decisions and production planning, greater customer satisfaction, 
   and visibility into factory information.
 
 - Improved productivity. Less time spent comparing documents and resolving 
-  discrepancies means team members can focus on move value-add business opportunities.
+  discrepancies means team members can focus on move value-add business 
+opportunities.
 
 
 The design will address the following use cases:
@@ -99,11 +104,16 @@ The design will address the following use cases:
 - Sharing of supplier, certification, and standards data on Grid
 - Modeling of real-world certification issuance workflows
 
-It is also useful to use certification data as auxiliary data in other supply chain solutions. 
-For example, in track and trace smart contract, the location of a particular factory in a 
-supply chain can be extended to include the certificates the factory holds. When presenting 
-this information later to a sourcing specialist, it makes its easier for them to vet potential 
-factories. This workflow will introduce a certificate data model that could also be extended 
+It is also useful to use certification data as auxiliary data in other supply 
+chain solutions. 
+For example, in track and trace smart contract, the location of a particular 
+factory in a 
+supply chain can be extended to include the certificates the factory holds. 
+When presenting 
+this information later to a sourcing specialist, it makes its easier for them 
+to vet potential 
+factories. This workflow will introduce a certificate data model that could 
+also be extended 
 to include product level certifications.
 
 
@@ -122,14 +132,16 @@ A simplified certification sequence is as follows:
 
 ## Entities
 
-A `PermissionAlias` is defined for standards bodies, certification bodies, and suppliers.
+A `PermissionAlias` is defined for standards bodies, certification bodies, and 
+suppliers.
 
 `Standards body`
 
 ```rs
 let alias = PermissionAlias {
    name: “certificate.standard_body”.to_string(),
-   permissions: vec![“create_standard”.to_string(), “update_standard_version”.to_string(), “accredit_cert_body”.to_string() ],
+   permissions: vec![“create_standard”.to_string(), 
+“update_standard_version”.to_string(), “accredit_cert_body”.to_string() ],
    transitions: vec![“confirmed”.to_string()]
 }
 ```
@@ -139,7 +151,8 @@ let alias = PermissionAlias {
 ```rs
 let alias = PermissionAlias {
    name: “certificate.cert_body”.to_string(),
-   permissions: vec![“issue_certification”.to_string(), “update_certification”.to_string()],
+   permissions: vec![“issue_certification”.to_string(), 
+“update_certification”.to_string()],
    transitions: vec![“confirmed”.to_string()]
 }
 ```
@@ -162,7 +175,8 @@ This design introduces six smart contract actions.
 - **Create standard:** Create a new standard
 - **Update standard:** Updates an existing standard by incrementing the version
 - **Accredit certifying body:** Accredit a certifying body to a standard
-- **Issue certificate:** Issue a certificate to a supplier from an accredited certifying body
+- **Issue certificate:** Issue a certificate to a supplier from an accredited 
+certifying body
 
 ## Transactions
 
